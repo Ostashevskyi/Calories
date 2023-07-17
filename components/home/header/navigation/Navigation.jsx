@@ -12,7 +12,11 @@ const Navigation = () => {
     <div className="space-x-10">
       {nav.map((el) => {
         return (
-          <Link key={el.id} href={el.href}>
+          <Link
+            key={el.id}
+            href={el.href}
+            className="hover:text-yellow-500 active:scale-95 text-white text-[20px] font-normal"
+          >
             {el.title}
           </Link>
         );

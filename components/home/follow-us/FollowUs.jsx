@@ -1,8 +1,11 @@
-import { H2White } from "@/components/H2";
 import React from "react";
-import { socialIcons_l } from "../header/social/socialIcons";
+
 import Link from "next/link";
 import Image from "next/image";
+
+import { socialIcons_l } from "../header/social/socialIcons";
+
+import { H2White } from "@/components/shared/H2";
 
 const FollowUs = () => {
   return (

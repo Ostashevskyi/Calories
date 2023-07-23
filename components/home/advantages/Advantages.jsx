@@ -1,4 +1,4 @@
-import { H2Yellow } from "@/components/H2";
+import { H2Yellow } from "@/components/shared/H2";
 import React from "react";
 import Cards from "./cards/Cards";
 

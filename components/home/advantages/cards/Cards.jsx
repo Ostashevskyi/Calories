@@ -33,7 +33,7 @@ const Cards = () => {
               <div className="max-w-[90%] border border-slate-200 rounded-md ml-6 h-[250px] shadow-lg font-serif">
                 <div className="flex mt-2 items-center ml-4 mb-4">
                   <div className="w-[32px] h-[32px] rounded-full bg-yellow-300 w-8 flex items-center justify-center text-slate-700">
-                    {card.id}
+                    {card.id + 1}
                   </div>
                   <h3 className="mx-4">{card.title}</h3>
                 </div>

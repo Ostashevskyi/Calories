@@ -1,4 +1,5 @@
 import React from "react";
+
 import { Playfair_Display } from "next/font/google";
 
 const playfair_display = Playfair_Display({

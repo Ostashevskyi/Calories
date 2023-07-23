@@ -1,9 +1,9 @@
 import React from "react";
 
-import { socialIcons_s } from "./socialIcons";
-
 import Link from "next/link";
 import Image from "next/image";
+
+import { socialIcons_s } from "./socialIcons";
 
 const Social = () => {
   return (

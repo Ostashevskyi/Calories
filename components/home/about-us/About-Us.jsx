@@ -1,4 +1,4 @@
-import { H2White } from "@/components/H2";
+import { H2White } from "@/components/shared/H2";
 
 export default function AboutUs() {
   return (

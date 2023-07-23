@@ -1,8 +1,12 @@
 import React from "react";
-import Logo from "./logo/Logo";
-import Navigation from "./navigation/Navigation";
-import Social from "./social/Social";
+
 import Authorization from "./auth/Authorization";
+
+import Navigation from "./navigation/Navigation";
+
+import Logo from "../../shared/Logo";
+
+import Social from "./social/Social";
 
 const Header = () => {
   return (

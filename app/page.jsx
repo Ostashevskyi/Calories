@@ -1,3 +1,4 @@
+"use client";
 import AboutUs from "@/components/home/about-us/About-Us";
 import Advantages from "@/components/home/advantages/Advantages";
 import FollowUs from "@/components/home/follow-us/FollowUs";

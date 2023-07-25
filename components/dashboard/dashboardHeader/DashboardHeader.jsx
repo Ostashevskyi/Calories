@@ -6,7 +6,7 @@ import DashboardUserInfo from "@/components/dashboard/dashboardHeader/dashboardU
 
 const DashboardHeader = () => {
   return (
-    <div className="flex flex-col h-full justify-between">
+    <div className="flex flex-col h-full justify-between fixed left-0 top-0 z-1000 py-8">
       <div className="flex items-center justify-center mb-[100px]">
         <Logo />
         <p className="ml-4">CalorieTracking</p>

@@ -8,10 +8,10 @@ export const metadata = {
 export default function DashboardLayout({ children }) {
   return (
     <div className="flex justify-between h-screen">
-      <header className="min-w-[250px] py-12">
+      <header className="min-w-[250px] ">
         <DashboardHeader />
       </header>
-      <main className="w-full border py-12">{children}</main>
+      <main className="w-full h-fit border-x px-10 py-12">{children}</main>
       <aside className="w-[350px] py-12">
         <h1>Aside</h1>
       </aside>

@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 const getCityLocation = createAsyncThunk(
-  "weather/fetchLocation",
+  "weather/getCityLocation",
   async function ({ city }, { rejectWithValue }) {
     try {
       const response = await fetch(

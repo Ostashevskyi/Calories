@@ -21,7 +21,7 @@ const Login = () => {
         <input type="submit" value="Log In" className="border cursor-pointer" />
       </form>
       <p>
-        <Link href="/account/register">Don't have an account?</Link>
+        <Link href="/account/register">Don&apos;t have an account?</Link>
       </p>
     </div>
   );

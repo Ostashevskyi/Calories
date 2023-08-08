@@ -12,9 +12,6 @@ export default function DashboardLayout({ children }) {
         <DashboardHeader />
       </header>
       <main className="w-full h-fit px-10 py-12">{children}</main>
-      {/* <aside className="w-[350px] py-12">
-        <h1>Aside</h1>
-      </aside> */}
     </div>
   );
 }

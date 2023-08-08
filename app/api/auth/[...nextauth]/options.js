@@ -45,10 +45,32 @@ export const options = {
         return {
           id: user.id + "",
           email: user.email,
-          name: user.username,
+          name: `${user.first_name} ${user.second_name}`,
         };
       },
     }),
   ],
-  //   adapter: PrismaAdapter(prisma),
+  callbacks: {
+    session: ({ session, token }) => {
+      console.log("Session Callback", { session, token });
+      return {
+        ...session,
+        user: {
+          ...session.user,
+          id: token.id,
+        },
+      };
+    },
+    jwt: ({ token, user }) => {
+      console.log("JWT Callback", { token, user });
+
+      if (user) {
+        return {
+          ...token,
+          id: user.id,
+        };
+      }
+      return token;
+    },
+  },
 };

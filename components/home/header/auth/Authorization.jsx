@@ -6,7 +6,7 @@ const Authorization = () => {
   return (
     <div>
       <Link
-        href="/account/login"
+        href="/api/auth/signin"
         className="hover:text-yellow-500 active:scale-95 text-white text-[20px] font-normal"
       >
         Log In

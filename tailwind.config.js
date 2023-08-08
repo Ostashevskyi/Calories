@@ -12,6 +12,11 @@ module.exports = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
         main: "@/public/images/mainBg.png",
+        theme: {
+          colors: {
+            "bg-grey": "#f2f4f7",
+          },
+        },
       },
     },
   },

@@ -7,7 +7,7 @@ export const metadata = {
 
 export default function DashboardLayout({ children }) {
   return (
-    <div className="flex justify-between h-screen">
+    <div className="flex justify-between h-screen bg-[#f2f4f7]">
       <header className="min-w-[250px] border-x">
         <DashboardHeader />
       </header>

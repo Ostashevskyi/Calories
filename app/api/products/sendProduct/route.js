@@ -25,7 +25,7 @@ export async function POST(req) {
   //   return strTime;
   // }
 
-  await prisma.diary.create({
+  const res = await prisma.diary.create({
     data: {
       product: meal,
       amount: +quantity,
@@ -39,7 +39,5 @@ export async function POST(req) {
     },
   });
 
-  return NextResponse.json({
-    status: 200,
-  });
+  return NextResponse.json({ res }, { status: 200 });
 }

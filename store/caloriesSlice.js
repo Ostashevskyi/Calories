@@ -20,6 +20,20 @@ export const getCalories = createAsyncThunk(
 
       const data = await response.json();
 
+      const returnedData = data.items[0];
+
+      await fetch("/api/products/sendProduct", {
+        method: "POST",
+        body: JSON.stringify({
+          meal: returnedData.name,
+          quantity: returnedData.serving_size_g,
+          protein: returnedData.protein_g,
+          fats: returnedData.fat_total_g,
+          carbs: returnedData.carbohydrates_total_g,
+          calories: returnedData.calories,
+        }),
+      });
+
       return data.items[0];
     } catch (error) {
       throw new Error(error);

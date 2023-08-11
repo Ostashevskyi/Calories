@@ -1,32 +1,10 @@
 "use client";
-
 import { getCalories } from "@/store/caloriesSlice";
-import { useSession } from "next-auth/react";
-import React, { useMemo } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import React from "react";
+import { useDispatch } from "react-redux";
 
 const DiaryAddProducts = () => {
   const dispatch = useDispatch();
-
-  const { calories, protein, fats, carbs, amount, meal } = useSelector(
-    (state) => state.calories
-  );
-
-  useMemo(async () => {
-    if (calories > 0) {
-      await fetch("/api/products/sendProduct", {
-        method: "POST",
-        body: JSON.stringify({
-          meal,
-          quantity: amount,
-          protein,
-          fats,
-          carbs,
-          calories,
-        }),
-      });
-    }
-  }, [calories, protein, fats, carbs]);
 
   const handleClick = async () => {
     const meal = document.querySelector("#meal").value;

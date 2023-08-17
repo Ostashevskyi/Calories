@@ -2,10 +2,13 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
 export const getProducts = createAsyncThunk(
   "products/getProducts",
-  async function () {
+  async function ({ date }) {
     try {
       const res = await fetch("/api/products/getProducts", {
-        method: "GET",
+        method: "POST",
+        body: JSON.stringify({
+          date,
+        }),
       });
 
       const products = await res.json();

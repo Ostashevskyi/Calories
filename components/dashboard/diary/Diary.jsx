@@ -11,29 +11,6 @@ const Diary = async () => {
           <DiaryTimePicker />
         </div>
         <div className="max-h-[350px] overflow-y-scroll">
-          <article className={`grid grid-cols-7 border gap-6 text-center p-4`}>
-            <div>
-              <p>Time</p>
-            </div>
-            <div>
-              <p>Meal</p>
-            </div>
-            <div>
-              <p>Quantity</p>
-            </div>
-            <div>
-              <p>Fats</p>
-            </div>
-            <div>
-              <p>Carbs</p>
-            </div>
-            <div>
-              <p>Protein</p>
-            </div>
-            <div>
-              <p>Calories</p>
-            </div>
-          </article>
           <DiaryTable />
         </div>
         <DeleteButton />

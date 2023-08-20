@@ -1,17 +1,19 @@
 import { prisma } from "@/server/client/client";
 import { getServerSession } from "next-auth";
 import { NextResponse } from "next/server";
-import { options } from "./auth/[...nextauth]/options";
+import { options } from "@/app/api/auth/[...nextauth]/options";
 
-export async function DELETE() {
+export async function DELETE(req) {
   const session = await getServerSession(options);
+  const { productID } = await req.json();
 
   const { user } = session;
-  const { id } = user;
+  const { id: userId } = user;
 
-  const deleteRes = await prisma.diary.deleteMany({
+  const deleteRes = await prisma.diary.delete({
     where: {
-      userId: +id,
+      userId: +userId,
+      id: productID,
     },
   });
 

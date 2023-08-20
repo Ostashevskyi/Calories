@@ -1,5 +1,4 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import { getServerSession } from "next-auth";
 
 export const getCalories = createAsyncThunk(
   "calories/getCalories",
@@ -28,7 +27,7 @@ export const getCalories = createAsyncThunk(
           meal: returnedData.name,
           quantity: returnedData.serving_size_g,
           protein: returnedData.protein_g,
-          fats: returnedData.fat_total_g,
+          fats: returnedData.fat_saturated_g,
           carbs: returnedData.carbohydrates_total_g,
           calories: returnedData.calories,
         }),
@@ -52,13 +51,14 @@ const caloriesSlice = createSlice({
     protein: 0,
     fats: 0,
     carbs: 0,
+    id: 0,
   },
   extraReducers: (builder) => {
     builder.addCase(getCalories.fulfilled, (state, action) => {
       state.error = "";
       state.status = "fulfilled";
       state.calories = action.payload.calories;
-      state.fats = action.payload.fat_total_g;
+      state.fats = action.payload.fat_saturated_g;
       state.protein = action.payload.protein_g;
       state.carbs = action.payload.carbohydrates_total_g;
       state.amount = action.payload.serving_size_g;

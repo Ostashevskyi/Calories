@@ -13,13 +13,11 @@ const DiaryTimePicker = () => {
   const dispatch = useDispatch();
 
   const onChange = (date) => {
-    console.log("ONCHANGE:", date);
     setDate(date);
     dispatch(getDate({ date }));
   };
 
   useMemo(() => {
-    console.log("FIRST LOAD DATE:", date);
     dispatch(getDate({ date }));
   }, []);
 

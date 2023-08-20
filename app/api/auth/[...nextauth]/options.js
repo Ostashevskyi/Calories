@@ -22,8 +22,8 @@ export const options = {
         },
       },
       async authorize(credentials) {
-        if (!credentials?.email || !credentials.password) {
-          return null;
+        if (!credentials?.email && !credentials.password) {
+          throw new Error("Fields are empty");
         }
 
         const user = await prisma.user.findUnique({
@@ -39,7 +39,7 @@ export const options = {
         const isPassValid = credentials.password === user.password;
 
         if (!isPassValid) {
-          return null;
+          throw new Error("Invalid password");
         }
 
         return {
@@ -50,9 +50,11 @@ export const options = {
       },
     }),
   ],
+  pages: {
+    signIn: "/account/login",
+  },
   callbacks: {
     session: ({ session, token }) => {
-      console.log("Session Callback", { session, token });
       return {
         ...session,
         user: {
@@ -62,8 +64,6 @@ export const options = {
       };
     },
     jwt: ({ token, user }) => {
-      console.log("JWT Callback", { token, user });
-
       if (user) {
         return {
           ...token,

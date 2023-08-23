@@ -73,5 +73,5 @@ export const options = {
       return token;
     },
   },
-  secret: process.env.NEXT_PUBLIC_SECRET,
+  secret: process.env.NEXTAUTH_SECRET,
 };

@@ -53,7 +53,7 @@ const DiaryTable = () => {
         })
       );
     }
-  }, [products, calcTotal, dispatch]);
+  }, [products, dispatch]);
 
   return (
     <>

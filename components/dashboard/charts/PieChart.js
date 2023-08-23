@@ -42,7 +42,7 @@ const PieChart = () => {
         </div>
       </>
     );
-  }, [totalCalories]);
+  }, [totalCalories, percentage]);
 
   return (
     <div className="w-[300px] h-[300px] flex items-center">

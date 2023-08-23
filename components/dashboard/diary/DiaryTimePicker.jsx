@@ -19,7 +19,7 @@ const DiaryTimePicker = () => {
 
   useMemo(() => {
     dispatch(getDate({ date }));
-  }, []);
+  }, [date, dispatch]);
 
   return (
     <DatePicker

@@ -50,7 +50,7 @@ export const options = {
       },
     }),
   ],
-  secret: "IuMYLp/T+nGzqd0Frff6Ho7+mEglpRmypHwSQn5KSgg=",
+  secret: process.env.NEXTAUTH_SECRET,
   pages: {
     signIn: "/account/login",
   },

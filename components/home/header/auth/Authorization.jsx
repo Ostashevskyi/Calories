@@ -1,22 +1,22 @@
+"use client";
 import React from "react";
-import { getServerSession } from "next-auth";
-
 import Link from "next/link";
-import HeaderGreetings from "../navigation/HeaderGreetings";
 
-const Authorization = async () => {
-  const session = await getServerSession();
+import HeaderGreetings from "../navigation/HeaderGreetings";
+import Button from "@/components/shared/Button";
+import { useSession } from "next-auth/react";
+
+const Authorization = () => {
+  const session = useSession();
+  const status = session.status;
 
   return (
     <div>
-      {session ? (
+      {status === "authenticated" ? (
         <HeaderGreetings />
       ) : (
-        <Link
-          href="/api/auth/signin"
-          className="hover:text-yellow-500 active:scale-95 text-white text-[20px] font-normal"
-        >
-          Log In
+        <Link href="/account/login">
+          <Button>Log In</Button>
         </Link>
       )}
     </div>

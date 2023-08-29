@@ -15,6 +15,7 @@ module.exports = {
         theme: {
           colors: {
             "bg-grey": "#f2f4f7",
+            "orange-special": "#ff6347",
           },
         },
       },

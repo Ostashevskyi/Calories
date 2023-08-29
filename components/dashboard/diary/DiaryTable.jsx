@@ -17,7 +17,7 @@ const DiaryTable = () => {
 
   useEffect(() => {
     dispatch(getProducts({ date }));
-  }, [calories, protein, fats, carbs, amount, meal, date]);
+  }, [calories, protein, fats, carbs, amount, meal, date, dispatch]);
 
   const calcTotal = (valu) => {
     return products
@@ -53,7 +53,7 @@ const DiaryTable = () => {
         })
       );
     }
-  }, [products]);
+  }, [products, dispatch]);
 
   return (
     <>

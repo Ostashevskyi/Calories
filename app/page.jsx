@@ -1,9 +1,9 @@
-import AboutUs from "@/components/home/about-us/About-Us";
-import Advantages from "@/components/home/advantages/Advantages";
-import FollowUs from "@/components/home/follow-us/FollowUs";
-import Header from "@/components/home/header/Header";
 import Title from "@/components/home/title/Title";
+import Header from "@/components/home/header/Header";
 import Footer from "@/components/home/footer/Footer";
+import AboutUs from "@/components/home/about-us/About-Us";
+import FollowUs from "@/components/home/follow-us/FollowUs";
+import Advantages from "@/components/home/advantages/Advantages";
 
 export const metadata = {
   title: "Kcal",

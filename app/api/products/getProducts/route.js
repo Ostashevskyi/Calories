@@ -2,10 +2,12 @@ import { prisma } from "@/server/client/client";
 import { options } from "../../auth/[...nextauth]/options";
 import { getServerSession } from "next-auth";
 import { NextResponse } from "next/server";
+import { zonedTimeToUtc } from "date-fns-tz";
 
 export async function POST(req) {
   const { date } = await req.json();
-  console.log("GET PRODUCT DATE:", { date });
+  const timeZone = "Atlantic/Azores";
+  const utcDate = zonedTimeToUtc(date, timeZone);
 
   const session = await getServerSession(options);
 
@@ -15,7 +17,7 @@ export async function POST(req) {
   const res = await prisma.diary.findMany({
     where: {
       userId: +id,
-      date,
+      date: utcDate,
     },
   });
 
